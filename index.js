@@ -2,6 +2,7 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -164,6 +165,6 @@ app.post("/db", (req, res) => {
     });
   });
 });
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log("Server is running on http://localhost:8080");
 });
